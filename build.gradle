@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+}
+
+version = '1.1.0'
+group = 'com.dimensaolimbo.travessia'
+
+base {
+    archivesName = 'travessia'
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
+}
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.3.0'
+}
+
+tasks.named('jar', Jar).configure {
+    manifest {
+        attributes([
+            'Specification-Title'   : 'travessia',
+            'Specification-Vendor'  : 'Dimensao Limbo',
+            'Specification-Version' : '1',
+            'Implementation-Title'  : project.name,
+            'Implementation-Version': project.jar.archiveVersion,
+            'Implementation-Vendor' : 'Dimensao Limbo'
+        ])
+    }
+    finalizedBy 'reobfJar'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

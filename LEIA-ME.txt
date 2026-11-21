@@ -1,0 +1,22 @@
+TRAVESSIA 1.1.0 - Forge 1.20.1 (roda só no servidor)
+
+COMO ATUALIZAR NO GITHUB:
+1. Abra o repositório -> Add file -> Upload files.
+2. Arraste a pasta "src" e o arquivo "build.gradle" deste zip. Commit changes.
+3. Aba Actions: espere o check verde, baixe "travessia-jar" (travessia-1.1.0.jar).
+4. Troque o jar antigo na pasta mods.
+
+COMANDOS:
+/travessia                                   canaliza 5 s e teleporta ao spawn (jogador fica travado)
+/travessia estilo <nome>                     escolhe o estilo
+/travessia estilos                           lista os estilos liberados
+/travessia cor #ff5ca8 #ffe3f1               salva as cores
+/travessia cor padrao                        volta às cores do estilo
+/travessia teleportar <alvos> <jogador>      (OP) leva alvos até um jogador
+/travessia teleportar <alvos> <x y z>        (OP) leva alvos até uma posição
+/travessia conceder <jogador> chama          (OP) libera a Chama Dourada
+
+<alvos> pode ser um nome, @a (todos), @a[distance=..20], @p etc.
+Exemplos:
+  /travessia teleportar @a Icaro
+  /travessia teleportar Fulano 100 70 -200
